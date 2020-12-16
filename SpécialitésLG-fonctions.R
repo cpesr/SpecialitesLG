@@ -44,10 +44,7 @@ plot_cospés <- function(bac.cible, discipline.cible, nbspé = 10) {
     filter(Discipline) %>%
     separate_rows(Spécialités, sep=" ")
 
-  df.disc <- df %>%
-    filter(Spécialités == discipline.cible) %>%
-    group_by(Niveau) %>%
-    summarise(Effectifs.disc = sum(Effectifs))
+  effectifs.disc <- sum(filter(df, Spécialités == discipline.cible, Niveau=="Première")$Effectifs)
 
   df.rank <- df %>%
     #filter(Spécialités != discipline.cible, Niveau == "Terminale") %>%
@@ -71,21 +68,21 @@ plot_cospés <- function(bac.cible, discipline.cible, nbspé = 10) {
     summarise(
       Effectifs = sum(Effectifs),
       Rang = min(Rang)) %>%
-    merge(df.disc) %>%
     mutate(
-      Ratio = Effectifs/Effectifs.disc,
+      Ratio = Effectifs/effectifs.disc,
       Ratio.label = ifelse(Ratio>0.03,scales::percent(Ratio, accuracy=1),NA)) %>%
 
-    ggplot(aes(x=reorder(Spécialités, -Rang),y=Effectifs,fill=Niveau)) +
+    ggplot(aes(x=reorder(Spécialités, -Rang),y=Ratio,fill=Niveau)) +
     geom_col(position="identity",color="black") +
     geom_text(aes(label=Ratio.label), position = "identity", direction ="x", hjust=-0.1) +
     coord_flip(clip="off") +
     scale_fill_brewer(
       palette = "Paired",
       labels=c("Première","Première et Terminale")) +
+    scale_y_continuous(labels = scales::percent, name="Ratio des élèves ayant la spécialité en Première") +
     guides(fill=FALSE) +
     theme_cpesr(base_family = "sans") + theme(
-      plot.margin = margin(0,15,0,0),
+      plot.margin = margin(0,20,0,0),
       axis.title.y = element_blank(),
       panel.grid.major.y = element_blank(),
       panel.grid.major.x = element_line(color="grey",size=0.2))

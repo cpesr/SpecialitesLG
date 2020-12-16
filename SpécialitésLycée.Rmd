@@ -57,17 +57,17 @@ Remerciements : sur une idée de Marc de Falco \@MarcdeFalco
 
 # Exemple de lecture
 
-Pour l'exemple de lecture, la spécialité choisie est celle qui a été le plus choisie par les élèves.
+Pour l'exemple de lecture, la spécialité est celle qui a été le plus choisie par les élèves.
 
 ```{r exemple, out.height="55%", fig.asp=8/16}
     plots(2021,"MATHS")
 ```
 ## Exemples de lecture
 
-- Parmi les bacheliers de 2021, 265 milliers ont suivi la spécialité en Première 
+- Parmi les bacheliers de 2021, 265 milliers ont suivi Mathématiques en Première 
 (environ deux tiers) et 154 milliers en Terminale (environ un tiers).
-- Parmi les bacheliers de 2021 ayant choisi la spécialité, 65% (plus de 150 milliers) ont aussi
-suivi Physique Chimie en Première, et 48% (environ 75 milliers) en Terminale.
+- Parmi les bacheliers de 2021 ayant suivi Mathématiques en Première, 58% l'ont 
+suivie en Terminale, 65% on suivi Physique Chimie en Première et 28% en Terminale.
 
 
 ```{r toutes.spécialités, results='asis', out.height="85%", fig.asp=8/16}
