@@ -50,7 +50,8 @@ plot_cospés <- function(bac.cible, discipline.cible, nbspé = 10) {
     summarise(Effectifs.disc = sum(Effectifs))
 
   df.rank <- df %>%
-    filter(Spécialités != discipline.cible, Niveau == "Terminale") %>%
+    #filter(Spécialités != discipline.cible, Niveau == "Terminale") %>%
+    filter(Niveau == "Terminale") %>%
     group_by(Spécialités) %>%
     summarise(Effectifs = sum(Effectifs)) %>%
     transmute(
@@ -58,7 +59,7 @@ plot_cospés <- function(bac.cible, discipline.cible, nbspé = 10) {
       Rang = rank(desc(Effectifs)))
 
   df %>%
-    filter(Spécialités != discipline.cible) %>%
+    #filter(Spécialités != discipline.cible) %>%
     group_by(Niveau, Spécialités) %>%
     summarise(Effectifs = sum(Effectifs)) %>%
     merge(df.rank) %>%
