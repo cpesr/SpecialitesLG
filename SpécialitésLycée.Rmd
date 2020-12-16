@@ -1,0 +1,78 @@
+---
+title: Les co-spécialités choisies en Lycée général
+date: "`r format(Sys.time(), '%d/%m/%Y')`"
+output:
+  beamer_presentation:
+    number_sections: true
+    slide_level: 1
+    #toc_depth: 2
+    theme: "Madrid"
+    includes:
+      in_header: files/header.tex
+      #before_body: before_body.tex
+    keep_tex:  true
+urlcolor: blue
+linkcolor: white
+fontsize: 8pt
+lang: "fr-FR"
+classoption: aspectratio=169
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(fig.align="center")
+#knitr::opts_chunk$set(pdf.options(encoding = "CP1250"))
+source("SpécialitésLG-fonctions.R")
+```
+
+
+# Introduction
+
+La réformes du Lycée Général connue sous le nom « Bac 2021 » ou « Bac Blanquer » 
+supprime les trois séries S, ES et L, et les remplace par un choix de trois 
+spécialités en Première, puis deux en Terminale. 
+Il en résulte une démultiplication des profil des bachelières et bacheliers généraux,
+conduisant à un accroissement de la difficulté à les orienter et les accueillir 
+dans le supérieur.
+
+Ce document permet d'identifier, par spécialité, quelle est la proportion d'élèves
+l'ayant suivie en Première et Terminale, et quelles sont les proportions pour 
+chacune des co-spécialités choisies. Il représente une aide pour les enseignants
+du supérieur souhaitant se préparer à l'arrivée de ces nouveaux bacheliers.
+
+```{r, out.height = "20%"}
+knitr::include_graphics("files/logo_cpesr_sackersgothic.pdf")
+```
+
+
+## Données sources
+
+Les données sources accompagnent les notes de la DEPP :
+
+- [Choix de trois spécialités en première générale à la rentrée 2019 : 15 combinaisons pour 80 % des élèves, N° 19.48 – Novembre 2019](https://www.education.gouv.fr/choix-de-trois-specialites-en-premiere-generale-la-rentree-2019-15-combinaisons-pour-80-des-eleves-3245)
+- [À la rentrée 2020, les élèves de terminale précisent leur choix de parcours, n° 20.38 – Novembre 2020](https://www.education.gouv.fr/la-rentree-2020-les-eleves-de-terminale-precisent-leur-choix-de-parcours-307016)
+
+Remerciements : sur une idée de Marc de Falco \@MarcdeFalco
+
+
+# Exemple de lecture
+
+Pour l'exemple de lecture, la spécialité choisie est celle qui a été le plus choisie par les élèves.
+
+```{r exemple, out.height="55%", fig.asp=8/16}
+    plots(2021,"MATHS")
+```
+## Exemples de lecture
+
+- Parmi les bacheliers de 2021, 265 milliers ont suivi la spécialité en Première 
+(environ deux tiers) et 154 milliers en Terminale (environ un tiers).
+- Parmi les bacheliers de 2021 ayant choisi la spécialité, 65% (plus de 150 milliers) ont aussi
+suivi Physique Chimie en Première, et 48% (environ 75 milliers) en Terminale.
+
+
+```{r toutes.spécialités, results='asis', out.height="85%", fig.asp=8/16}
+for(nom in spe.noms) {
+  cat("#",nom,"\n\n")
+  print(plots(2021,nom))
+}
+```
