@@ -29,8 +29,3 @@ spe <- bind_rows(spe.2019.1,spe.2020.T,spe.2020.1)
 write.csv(spe, "SpécialitésLG.csv",row.names = FALSE)
 
 spe.noms <- unique(c(unlist(str_split(spe$Spécialités," "))))
-
-label_effectifs <- function(x) {
-  paste0(round(x/1000),"k")
-}
-

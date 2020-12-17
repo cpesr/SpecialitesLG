@@ -1,5 +1,5 @@
 ---
-title: Les co-spécialités choisies en Lycée général
+title: Les co-spécialités suivies en Lycée général
 date: "`r format(Sys.time(), '%d/%m/%Y')`"
 output:
   beamer_presentation:
@@ -57,17 +57,18 @@ Remerciements : sur une idée de Marc de Falco \@MarcdeFalco
 
 # Exemple de lecture
 
-Pour l'exemple de lecture, la spécialité est celle qui a été le plus choisie par les élèves.
-
 ```{r exemple, out.height="55%", fig.asp=8/16}
-    plots(2021,"MATHS")
+    plots(2021,"SES")
 ```
 ## Exemples de lecture
 
-- Parmi les bacheliers de 2021, 265 milliers ont suivi Mathématiques en Première 
-(environ deux tiers) et 154 milliers en Terminale (environ un tiers).
-- Parmi les bacheliers de 2021 ayant suivi Mathématiques en Première, 58% l'ont 
-suivie en Terminale, 65% on suivi Physique Chimie en Première et 28% en Terminale.
+- Parmi les bacheliers de 2021, 151 milliers ont suivi SES en Première (environ 40%) et 
+123 milliers en Terminale (environ un tiers).
+- Pour 100 bacheliers de 2021 ayant suivi SES en Première, 82 ont un cursus 
+complet SES en l'ayant suivie en Terminale, 58 ont aussi suivi Histoire Géo Politique
+en Première, et 36 ont un cursus complet SES + Histoire Géo Politique.
+- Pour 100 bacheliers de 2010 ayant suivi SES en Terminale, 71 ont au moins suivi 
+Histoire Géo Politique en Première et 44 ont un cursus complet SES + Histoire Géo Politique.
 
 
 ```{r toutes.spécialités, results='asis', out.height="85%", fig.asp=8/16}
