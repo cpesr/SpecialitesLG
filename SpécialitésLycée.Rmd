@@ -9,7 +9,7 @@ output:
     theme: "Madrid"
     includes:
       in_header: files/header.tex
-      #before_body: before_body.tex
+      #before_body: files/before_body.tex
     keep_tex:  true
 urlcolor: blue
 linkcolor: white
@@ -24,6 +24,7 @@ knitr::opts_chunk$set(fig.align="center")
 #knitr::opts_chunk$set(pdf.options(encoding = "CP1250"))
 source("SpécialitésLG-fonctions.R")
 ```
+
 
 
 # Introduction
@@ -52,12 +53,12 @@ Les données sources accompagnent les notes de la DEPP :
 - [Choix de trois spécialités en première générale à la rentrée 2019 : 15 combinaisons pour 80 % des élèves, N° 19.48 – Novembre 2019](https://www.education.gouv.fr/choix-de-trois-specialites-en-premiere-generale-la-rentree-2019-15-combinaisons-pour-80-des-eleves-3245)
 - [À la rentrée 2020, les élèves de terminale précisent leur choix de parcours, n° 20.38 – Novembre 2020](https://www.education.gouv.fr/la-rentree-2020-les-eleves-de-terminale-precisent-leur-choix-de-parcours-307016)
 
-Remerciements : sur une idée de Marc de Falco \@MarcdeFalco
+Remerciements : sur une idée de Marc de Falco \@MarcdeFalco, avec l'aide de Florent Figon et Romain Biard
 
 
 # Exemple de lecture
 
-```{r exemple, out.height="55%", fig.asp=8/16}
+```{r exemple, out.height="50%", fig.asp=8/16}
     plots(2021,"SES")
 ```
 ## Exemples de lecture
@@ -67,8 +68,8 @@ Remerciements : sur une idée de Marc de Falco \@MarcdeFalco
 - Pour 100 bacheliers de 2021 ayant suivi SES en Première, 82 ont un cursus 
 complet SES en l'ayant suivie en Terminale, 58 ont aussi suivi Histoire Géo Politique
 en Première, et 36 ont un cursus complet SES + Histoire Géo Politique.
-- Pour 100 bacheliers de 2010 ayant suivi SES en Terminale, 71 ont au moins suivi 
-Histoire Géo Politique en Première et 44 ont un cursus complet SES + Histoire Géo Politique.
+- Pour 100 bacheliers de 2010 ayant suivi SES en Terminale, 71 ont suivi 
+Histoire Géo Politique au moins en Première et 44 ont un cursus complet SES + Histoire Géo Politique.
 
 
 ```{r toutes.spécialités, results='asis', out.height="85%", fig.asp=8/16}

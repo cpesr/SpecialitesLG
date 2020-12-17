@@ -28,3 +28,52 @@
 %   \usebeamerfont{section title}\insertsection\par
 % \end{beamercolorbox}
 % }
+
+
+\newcommand\titre{Les co-spécialités \\ suivies en Lycée général}
+\newcommand\auteur{Julien Gossa}
+\newcommand\rentree{Edition Bac 2021}
+\newcommand\ladate{Décembre 2020}
+\newcommand\reportid{cslg-2021-v1.0}
+
+\definecolor{royalblue(traditional)}{rgb}{0.0, 0.14, 0.4}
+\definecolor{royalblue(web)}{rgb}{0.25, 0.41, 0.88}
+
+\newcommand\titleY{0cm}
+\newcommand\titleS{2.5}
+\newcommand\titleBoxW{10cm}
+\newcommand\titleBoxH{5cm}
+\newcommand\titleBoxR{7}
+
+\setbeamertemplate{title page}{%
+\begin{tikzpicture}[overlay,remember picture]
+
+  \coordinate (logo) at (current page.north west);
+  \coordinate (title) at ($(current page.center) + (0,\titleY)$);
+  \coordinate (author) at (current page.south east);
+
+\node (nlogo) [inner sep=5pt, anchor=north west] at (logo)
+  {\includegraphics[width=4cm]{files/logo_cpesr_sackersgothic}};
+
+\node (bandeau) at (title)
+  [draw, minimum width=\titleBoxW, minimum height=\titleBoxH, rotate=\titleBoxR, color=royalblue(web), fill=royalblue(web)] {};
+
+\node (ntitle) at (title)
+  [inner sep=0pt, anchor=center, align=center, font=\bfseries, scale=\titleS, align=center, color=white]
+  {\titre};
+
+\node (nrentree) at ($(bandeau.south west)!0.95!(bandeau.south east)$)
+  [inner sep=10pt, anchor=south east, rotate=\titleBoxR, font=\Huge, color=white]
+  {\rentree};
+
+\node (num) at ($(bandeau.south west)!0.94!(bandeau.south east)$)
+  [inner sep=5pt, anchor=north east, rotate=\titleBoxR, font=\large]
+  {\reportid};
+
+\node (nauteur) at (author)
+  [inner sep=15pt, anchor=south east, align=center, font=\large, align=left, color =black]
+  {\textbf{\ladate} \\ \auteur};
+
+
+\end{tikzpicture}
+}
