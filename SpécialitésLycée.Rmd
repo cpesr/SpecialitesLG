@@ -73,6 +73,7 @@ Histoire Géo Politique au moins en Première et 44 ont un cursus complet SES + 
 
 ```{r toutes.spécialités, results='asis', out.height="85%", fig.asp=8/16}
 for(nom in spe.noms) {
+  if (nom == "2LLCER") next
   cat("#",nom,"\n\n")
   print(plots(2021,nom))
 }
