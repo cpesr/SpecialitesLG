@@ -58,7 +58,7 @@ _Remerciements :_
 Sur une idée de Marc de Falco, avec l'aide de Florent Figon, Romain Biard et Cédric Hugrée.
 
 
-# Exemple de lecture
+# Exemple de lecture : Spécialité SES
 
 ```{r exemple, out.height="55%", fig.asp=8/16}
     plots(2021,"SES")
@@ -72,7 +72,7 @@ Sur une idée de Marc de Falco, avec l'aide de Florent Figon, Romain Biard et C�
 ```{r toutes.spécialités, results='asis', out.height="85%", fig.asp=8/16}
 for(nom in spe.noms) {
   if (nom == "2LLCER") next
-  cat("#",nom,"\n\n")
+  cat("# Spécialité ",nom,"\n\n")
   print(plots(2021,nom))
 }
 ```
