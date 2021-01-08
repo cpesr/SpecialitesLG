@@ -29,10 +29,10 @@ source("SpécialitésLG-fonctions.R")
 
 # Introduction
 
-La réformes du Lycée Général connue sous le nom « Bac 2021 » ou « Bac Blanquer » 
+La réforme du Lycée Général connue sous le nom « Bac 2021 » ou « Bac Blanquer » 
 supprime les trois séries S, ES et L, et les remplace par __un choix de trois 
 spécialités en Première, puis deux en Terminale__. 
-Il en résulte une multiplication des profil des bachelières et bacheliers généraux,
+Il en résulte une multiplication des profils des bachelières et bacheliers généraux,
 conduisant à un accroissement de la difficulté à les orienter et les accueillir 
 dans le supérieur.
 
