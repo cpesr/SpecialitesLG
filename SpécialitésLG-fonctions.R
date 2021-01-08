@@ -94,6 +94,7 @@ plot_cospés <- function(bac.cible, discipline.cible, nbspé = 10) {
       Ratio.label.T = ifelse(Effectifs/effectifs.disc.T>0.09,
                              scales::percent(Effectifs/effectifs.disc.T, accuracy=1),
                              NA)) %>%
+    mutate(Spécialités = spe.noms[Spécialités]) %>%
 
     ggplot(aes(x=reorder(Spécialités, -Rang),y=Ratio,fill=Niveau)) +
     geom_col(position="identity",color="black") +

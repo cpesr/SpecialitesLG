@@ -28,4 +28,7 @@ spe <- bind_rows(spe.2019.1,spe.2020.T,spe.2020.1)
 
 write.csv(spe, "SpécialitésLG.csv",row.names = FALSE)
 
-spe.noms <- unique(c(unlist(str_split(spe$Spécialités," "))))
+#spe.noms <- unique(c(unlist(str_split(spe$Spécialités," "))))
+#write.csv(spe.noms, "specialites.csv", row.names = false)
+spe.noms <- read.csv("specialites.csv")
+spe.noms <- setNames(spe.noms$Nom,spe.noms$Code)

@@ -70,9 +70,9 @@ Sur une idée de Marc de Falco, avec l'aide de Florent Figon, Romain Biard et C�
 
 
 ```{r toutes.spécialités, results='asis', out.height="85%", fig.asp=8/16}
-for(nom in spe.noms) {
-  if (nom == "2LLCER") next
-  cat("# Spécialité ",nom,"\n\n")
-  print(plots(2021,nom))
+for(code in names(spe.noms)) {
+  if (code %in% c("2LLCER","Autres")) next
+  cat("# Spécialité ",spe.noms[code],"\n\n")
+  print(plots(2021,code))
 }
 ```
